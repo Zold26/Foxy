@@ -23,8 +23,10 @@ To start the forward proxy server, run the following command:
 Replace <port> with the desired port number. If no port is specified, it will default to port 3456.
 
 Once the server is running, you can use a tool like curl to forward HTTP requests. For example:
-curl -x http://localhost/:<port> https://www.example.com/
-Replace <port> with the port number specified when starting the server, and https://www.example.com/ with the desired destination URL. 
+$env:http_proxy = 'http://localhost:3456/'
+$env:https_proxy = 'http://localhost:3456/'
+
+Invoke-WebRequest -Uri https://www.google.com/ 
 
 Salam Hormat
 Muhamad Iqbal Faturrahman
